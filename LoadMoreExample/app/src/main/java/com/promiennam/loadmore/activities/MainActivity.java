@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         // init data
         List<LoadMoreAdapter.Item> itemList = new ArrayList<>();
         for (int i = 0; i < 10; i++){
-            itemList.add(new LoadMoreAdapter.Item(LoadMoreAdapter.CHILD, "Phuong Nguyen BTW", "Male"));
+            itemList.add(new LoadMoreAdapter.Item(LoadMoreAdapter.CHILD, "Phuong Nguyen", "Male"));
         }
         // init adapter
         LoadMoreAdapter adapter = new LoadMoreAdapter(this, itemList, recyclerView);

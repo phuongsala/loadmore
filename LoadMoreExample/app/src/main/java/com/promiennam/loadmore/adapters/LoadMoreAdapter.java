@@ -39,7 +39,7 @@ public class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.itemList = itemList;
         this.recyclerView = recyclerView;
         this.inflater = LayoutInflater.from(context);
-        this.visibleThreshold = 10;
+        this.visibleThreshold = 5;
         this.handleLoadMore();
     }
 
@@ -77,14 +77,14 @@ public class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 // remove progress item
                 removeProgressBar();
                 // add more child item
-                for (int i = 0; i < 10; i++){
-                    itemList.add(new Item(CHILD, "Philosopher BTW", "Male"));
+                for (int i = 0; i < 10; i++) {
+                    itemList.add(new Item(CHILD, "Philosopher", "Male"));
                 }
-                Toast.makeText(context, "total item count: " + totalItemCount, Toast.LENGTH_SHORT).show();
                 notifyDataSetChanged(); // update adapter
                 isLoading = false;
             }
         }, 1000); // show progress bar with 1 second
+        Toast.makeText(context, "total item count: " + totalItemCount, Toast.LENGTH_SHORT).show();
     }
 
     private void removeProgressBar() {
